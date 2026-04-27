@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>unit 5 - OS Notes</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to top, #87CEEB, #e0f7ff);
+            overflow-x: hidden;
+        }
+
+        /* CLOUDS */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            opacity: 0.8;
+            z-index: 0;
+        }
+
+        .cloud1 {
+            width: 200px;
+            height: 60px;
+            top: 10%;
+            left: -220px;
+            animation: moveClouds 30s linear infinite;
+        }
+
+        .cloud2 {
+            width: 250px;
+            height: 70px;
+            top: 55%;
+            left: -280px;
+            animation: moveClouds 40s linear infinite;
+        }
+
+        @keyframes moveClouds {
+            from { transform: translateX(0); }
+            to { transform: translateX(120vw); }
+        }
+
+        /* CONTENT BOX */
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.88);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.2);
+            animation: fadeIn 1.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #0a3d62;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #1e3799;
+            margin-top: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #1e3799;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.8;
+            font-size: 17px;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        /* NAV BUTTONS */
+        .nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            margin: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 50px;
+            transition: 0.3s;
+            min-width: 130px;
+            text-align: center;
+        }
+
+        .home {
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+        }
+
+        .back {
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+        }
+
+        .btn:hover {
+            transform: scale(1.05) translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- CLOUDS -->
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<!-- CONTENT -->
+<div class="container">
+    <h1>📘 Unit 5: Security & Protection</h1>
+
+    <h2>🔐 What is OS Security?</h2>
+    <p>
+        Operating System security ka matlab hai system ko unauthorized access, misuse aur attacks se bachana.
+    </p>
+
+    <h2>🛡️ Goals of Security</h2>
+    <ul>
+        <li>Confidentiality</li>
+        <li>Integrity</li>
+        <li>Availability</li>
+    </ul>
+
+    <h2>🔑 Authentication</h2>
+    <p>
+        Authentication ek process hai jisme user ki identity verify ki jati hai (password, OTP, biometrics).
+    </p>
+
+    <h2>👤 Authorization</h2>
+    <p>
+        Authorization decide karta hai ki user ko kya access milega aur kya nahi.
+    </p>
+
+    <h2>⚠️ Threats to OS</h2>
+    <ul>
+        <li>Virus</li>
+        <li>Worms</li>
+        <li>Trojan Horse</li>
+        <li>Hacking</li>
+    </ul>
+
+    <h2>🔒 Protection Mechanisms</h2>
+    <ul>
+        <li>Access Control</li>
+        <li>Firewall</li>
+        <li>Encryption</li>
+        <li>Antivirus Software</li>
+    </ul>
+
+    <!-- NAVIGATION -->
+    <div class="nav">
+        <a href="index.html" class="btn home">🏠 Home</a>
+        <a href="unit4.html" class="btn back">⬅ Back</a>
+    </div>
+</div>
+
+</body>
+</html>
