@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unit 2 - OS Notes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to top, #87CEEB, #e0f7ff);
+            overflow-x: hidden;
+        }
+
+        /* CLOUDS */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            opacity: 0.8;
+        }
+
+        .cloud1 {
+            width: 200px;
+            height: 60px;
+            top: 10%;
+            left: -200px;
+            animation: moveClouds 30s linear infinite;
+        }
+
+        .cloud2 {
+            width: 250px;
+            height: 70px;
+            top: 50%;
+            left: -250px;
+            animation: moveClouds 40s linear infinite;
+        }
+
+        @keyframes moveClouds {
+            from { transform: translateX(0); }
+            to { transform: translateX(120vw); }
+        }
+
+        /* CONTENT BOX */
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.2);
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #0a3d62;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #1e3799;
+            margin-top: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        /* NAV BUTTONS */
+        .nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            position: relative;
+            display: inline-block;
+            padding: 14px 30px;
+            margin: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 50px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .home {
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            box-shadow: 0 0 15px #00c6ff;
+        }
+
+        .back {
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            box-shadow: 0 0 15px #ff512f;
+        }
+
+        .next {
+            background: linear-gradient(45deg, #00b09b, #96c93d);
+            box-shadow: 0 0 15px #00b09b;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.3);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- CLOUDS -->
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<!-- CONTENT -->
+<div class="container">
+    <h1>📘 Unit 2: Process Management</h1>
+
+    <h2>💻 What is a Process?</h2>
+    <p>
+        Process ek program ka execution hai. Jab koi program run hota hai, to use process kehte hain.
+        Har process ka apna memory space aur resources hote hain.
+    </p>
+
+    <h2>🔄 Process States</h2>
+    <ul>
+        <li>New – Process create ho raha hai</li>
+        <li>Ready – Execution ke liye ready hai</li>
+        <li>Running – CPU use kar raha hai</li>
+        <li>Waiting – Kisi event ka wait kar raha hai</li>
+        <li>Terminated – Process khatam ho gaya</li>
+    </ul>
+
+    <h2>📋 Process Control Block (PCB)</h2>
+    <p>
+        PCB ek data structure hai jo har process ki information store karta hai jaise:
+    </p>
+    <ul>
+        <li>Process ID</li>
+        <li>Process State</li>
+        <li>CPU Registers</li>
+        <li>Memory Info</li>
+    </ul>
+
+    <h2>⏱️ CPU Scheduling</h2>
+    <p>
+        CPU scheduling ka matlab hai CPU ko different processes ke beech allocate karna.
+    </p>
+
+    <h2>📊 Scheduling Algorithms</h2>
+    <ul>
+        <li>FCFS (First Come First Serve)</li>
+        <li>SJF (Shortest Job First)</li>
+        <li>Round Robin</li>
+        <li>Priority Scheduling</li>
+    </ul>
+
+    <h2>⚠️ Deadlock</h2>
+    <p>
+        Deadlock ek situation hai jisme processes ek dusre ka wait karte rehte hain aur koi bhi execute nahi hota.
+    </p>
+
+    <h2>🔒 Conditions of Deadlock</h2>
+    <ul>
+        <li>Mutual Exclusion</li>
+        <li>Hold and Wait</li>
+        <li>No Preemption</li>
+        <li>Circular Wait</li>
+    </ul>
+
+    <!-- NAVIGATION -->
+    <div class="nav">
+        <a href="index.html" class="btn home">🏠 Home</a>
+        <a href="unit1.html" class="btn back">⬅ Back</a>
+        <a href="unit3.html" class="btn next">Next ➡</a>
+    </div>
+</div>
+
+</body>
+</html>
